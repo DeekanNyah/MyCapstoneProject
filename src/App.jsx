@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TransactionForm from "./TransactionForm";
 import TransactionList from "./TransactionList";
+import BalanceSummary from "./BalanceSummary";
 
 export default function App() {
   const [transactions, setTransactions] = useState([]);
@@ -11,6 +12,7 @@ export default function App() {
     <div className="min-h-screen bg-gray-50 p-6">
       <h1 className="text-3xl font-bold text-blue-600">Personal Expense Tracker</h1>
       <TransactionForm onAddTransaction={addTransaction} />
+      <BalanceSummary transactions={transactions} />
       <TransactionList transactions={transactions} />
     </div>
   );
